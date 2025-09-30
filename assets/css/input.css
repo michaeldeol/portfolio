@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+/* Custom styles for your dark portfolio */
+@layer base {
+  html {
+    font-family: system-ui, sans-serif;
+  }
+  
+  body {
+    background-color: rgb(15 23 42); /* slate-900 */
+    color: rgb(241 245 249); /* slate-100 */
+  }
+}
+
+@layer components {
+  .btn {
+    padding: 1rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .btn-primary {
+    background: linear-gradient(135deg, rgb(99 102 241), rgb(139 92 246));
+    color: white;
+    box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.3);
+  }
+  
+  .btn-primary:hover {
+    background: linear-gradient(135deg, rgb(79 70 229), rgb(124 58 237));
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px 0 rgba(99, 102, 241, 0.4);
+  }
+  
+  .btn-secondary {
+    background-color: rgb(30 41 59); /* slate-800 */
+    color: rgb(226 232 240); /* slate-200 */
+    border: 1px solid rgb(51 65 85); /* slate-600 */
+  }
+  
+  .btn-secondary:hover {
+    background-color: rgb(51 65 85); /* slate-600 */
+    color: white;
+    transform: translateY(-1px);
+  }
+
+  /* Code block styling with syntax highlighting */
+  pre {
+    background-color: rgb(15 23 42) !important; /* slate-900 */
+    border: 1px solid rgb(51 65 85); /* slate-600 */
+    border-radius: 0.5rem;
+    padding: 1.5rem;
+    margin: 1.5rem 0;
+    overflow-x: auto;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+  }
+
+  /* Inline code */
+  p code, li code, td code {
+    background-color: rgb(30 41 59); /* slate-800 */
+    color: rgb(248 113 113); /* red-400 */
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.8em;
+  }
+
+  /* Syntax highlighting colors for dark theme */
+  .highlight .k { color: rgb(196 181 253); } /* purple-300 - keywords */
+  .highlight .nf { color: rgb(34 197 94); } /* green-500 - function names */
+  .highlight .nb { color: rgb(59 130 246); } /* blue-500 - built-ins */
+  .highlight .p { color: rgb(203 213 225); } /* slate-300 - punctuation */
+  .highlight .s1, .highlight .s2 { color: rgb(251 191 36); } /* amber-400 - strings */
+  .highlight .si { color: rgb(244 114 182); } /* pink-400 - string interpolation */
+  .highlight .c1 { color: rgb(148 163 184); font-style: italic; } /* slate-400 - comments */
+  .highlight .n { color: rgb(226 232 240); } /* slate-200 - names/variables */
+  
+  /* Additional syntax highlighting */
+  .highlight .kt { color: rgb(168 85 247); } /* purple-500 - types */
+  .highlight .kn { color: rgb(196 181 253); } /* purple-300 - import keywords */
+  .highlight .o { color: rgb(248 113 113); } /* red-400 - operators */
+  .highlight .m, .highlight .mi, .highlight .mf { color: rgb(34 197 94); } /* green-500 - numbers */
+  .highlight .bp { color: rgb(59 130 246); } /* blue-500 - built-in pseudo */
+}

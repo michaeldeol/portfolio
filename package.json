@@ -1,0 +1,20 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Personal portfolio site built with Jekyll and Tailwind CSS",
+  "scripts": {
+    "build": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css",
+    "build:watch": "tailwindcss -i ./assets/css/input.css -o ./assets/css/style.css --watch",
+    "jekyll:build": "bundle exec jekyll build",
+    "jekyll:serve": "bundle exec jekyll serve --livereload",
+    "dev": "npm run build && concurrently \"npm run build:watch\" \"npm run jekyll:serve\"",
+    "start": "npm run dev"
+  },
+  "dependencies": {
+    "tailwindcss": "^4.1.13"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.13",
+    "concurrently": "^8.2.2"
+  }
+}

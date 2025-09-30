@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<div class="min-h-screen bg-slate-900 py-12">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <article class="bg-slate-800 border border-slate-700 rounded-lg shadow-2xl overflow-hidden">
+      <header class="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 px-8 py-12 text-white text-center">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">{{ page.title }}</h1>
+        {% if page.date %}
+        <time class="text-indigo-100 text-lg" datetime="{{ page.date | date_to_xmlschema }}">
+          {{ page.date | date: "%B %d, %Y" }}
+        </time>
+        {% endif %}
+      </header>
+      
+      <div class="px-8 py-12">
+        <div class="prose prose-lg prose-invert max-w-none">
+          {{ content }}
+        </div>
+      </div>
+    </article>
+
+    {% if page.layout == "post" %}
+    <!-- Navigation between posts -->
+    <nav class="flex justify-between items-center mt-8 bg-slate-800 border border-slate-700 rounded-lg shadow-xl p-6">
+      {% if page.previous.url %}
+      <a href="{{ page.previous.url }}" class="flex items-center text-indigo-400 hover:text-indigo-300 transition-colors duration-200">
+        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        {{ page.previous.title | truncate: 30 }}
+      </a>
+      {% else %}
+      <div></div>
+      {% endif %}
+
+      {% if page.next.url %}
+      <a href="{{ page.next.url }}" class="flex items-center text-indigo-400 hover:text-indigo-300 transition-colors duration-200">
+        {{ page.next.title | truncate: 30 }}
+        <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </a>
+      {% else %}
+      <div></div>
+      {% endif %}
+    </nav>
+    {% endif %}
+  </div>
+</div>

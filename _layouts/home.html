@@ -1,0 +1,114 @@
+---
+layout: default
+---
+
+<div class="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+  <!-- Hero Section -->
+  <section class="py-20 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h1 class="text-5xl md:text-6xl font-bold text-white mb-6">
+        Welcome to My
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
+          Portfolio
+        </span>
+      </h1>
+      <p class="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
+        I'm a passionate developer creating amazing digital experiences. 
+        Explore my work and let's build something incredible together.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#projects" class="btn btn-primary inline-flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md">
+          View My Work
+        </a>
+        <a href="/about/" class="btn btn-secondary inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md">
+          About Me
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-20 bg-slate-800/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">Skills & Technologies</h2>
+        <p class="text-xl text-slate-300">Technologies I work with</p>
+      </div>
+      
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
+        {% assign skills = "JavaScript,TypeScript,React,Vue.js,Node.js,Python,HTML5,CSS3,Tailwind,Git" | split: "," %}
+        {% for skill in skills %}
+        <div class="bg-slate-700/50 border border-slate-600 rounded-lg p-6 text-center hover:bg-slate-600/50 hover:border-indigo-500 transition-all duration-200 group">
+          <div class="text-lg font-semibold text-slate-200 group-hover:text-indigo-400 transition-colors duration-200">{{ skill }}</div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Posts Section -->
+  {%- if site.posts.size > 0 -%}
+  <section id="blog" class="py-20 bg-slate-900/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-white mb-4">Latest Posts</h2>
+        <p class="text-xl text-slate-300">Thoughts, tutorials, and insights</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {%- assign posts = site.posts | slice: 0, 6 -%}
+        {%- for post in posts -%}
+        <article class="bg-slate-800 border border-slate-700 rounded-lg hover:border-indigo-500 hover:shadow-xl hover:shadow-indigo-500/10 transition-all duration-200 overflow-hidden group">
+          <div class="p-6">
+            <div class="text-sm text-indigo-400 font-semibold mb-2">
+              {{ post.date | date: "%B %d, %Y" }}
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors duration-200">
+              <a href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+            </h3>
+            {%- if post.excerpt -%}
+            <p class="text-slate-300 mb-4">{{ post.excerpt | strip_html | truncatewords: 20 }}</p>
+            {%- endif -%}
+            <a href="{{ post.url | relative_url }}" class="text-indigo-400 hover:text-indigo-300 font-medium">
+              Read More →
+            </a>
+          </div>
+        </article>
+        {%- endfor -%}
+      </div>
+
+      <div class="text-center mt-12">
+        <a href="/blog/" class="btn btn-secondary inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md">
+          View All Posts
+        </a>
+      </div>
+    </div>
+  </section>
+  {%- endif -%}
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-slate-800/50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h2 class="text-4xl font-bold text-white mb-4">Let's Work Together</h2>
+      <p class="text-xl text-slate-300 mb-8">
+        Have a project in mind? I'd love to hear about it.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        {%- if site.email -%}
+        <a href="mailto:{{ site.email }}" class="btn btn-primary inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md">
+          Get In Touch
+        </a>
+        {%- endif -%}
+        
+        {%- if site.github_username -%}
+        <a href="https://github.com/{{ site.github_username }}" class="btn btn-secondary inline-flex items-center justify-center px-8 py-3 text-base font-medium rounded-md">
+          View GitHub
+        </a>
+        {%- endif -%}
+      </div>
+    </div>
+  </section>
+</div>
+
+{{ content }}
