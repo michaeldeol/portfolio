@@ -24,8 +24,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   A modern portfolio showcasing my development skills and projects.
   Built with Jekyll and styled with Tailwind CSS for a clean, 
   responsive design.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/portfolio" # the subpath of your site, e.g. /blog
+url: "https://michaeldeol.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitch_username: R3VRND
 github_username: michaeldeol
 linkedin_username: michaeldeol
