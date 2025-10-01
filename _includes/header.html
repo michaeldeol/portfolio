@@ -2,12 +2,17 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center py-4">
       <div class="flex items-center">
-        <h1>{{ site.title | default: "Michael Deol" | escape }}</h1>
+        <h1 class="text-2xl font-bold text-white hover:text-indigo-400 transition-colors duration-200">
+          <a href="{{ "/" | relative_url }}" class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400 hover:from-indigo-300 hover:via-purple-300 hover:to-pink-300">
+            {{ site.title | default: "Michael Deol" | escape }}
+          </a>
+        </h1>
       </div>
       
       <nav class="hidden md:flex space-x-8">
         <a href="{{ "/" | relative_url }}" class="text-slate-300 hover:text-indigo-400 font-medium transition-colors duration-200">Home</a>
         <a href="{{ "/about/" | relative_url }}" class="text-slate-300 hover:text-indigo-400 font-medium transition-colors duration-200">About</a>
+        <a href="{{ "/resume/" | relative_url }}" class="text-slate-300 hover:text-indigo-400 font-medium transition-colors duration-200">Resume</a>
         {%- if site.posts.size > 0 -%}
           <a href="{{ "/blog/" | relative_url }}" class="text-slate-300 hover:text-indigo-400 font-medium transition-colors duration-200">Blog</a>
         {%- endif -%}
@@ -28,6 +33,7 @@
       <div class="flex flex-col space-y-2">
         <a href="{{ "/" | relative_url }}" class="text-slate-300 hover:text-indigo-400 font-medium py-2 transition-colors duration-200">Home</a>
         <a href="{{ "/about/" | relative_url }}" class="text-slate-300 hover:text-indigo-400 font-medium py-2 transition-colors duration-200">About</a>
+        <a href="{{ "/resume/" | relative_url }}" class="text-slate-300 hover:text-indigo-400 font-medium py-2 transition-colors duration-200">Resume</a>
         {%- if site.posts.size > 0 -%}
           <a href="{{ "/blog/" | relative_url }}" class="text-slate-300 hover:text-indigo-400 font-medium py-2 transition-colors duration-200">Blog</a>
         {%- endif -%}
