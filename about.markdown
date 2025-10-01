@@ -64,14 +64,7 @@ permalink: /about/
           I work with a variety of technologies to bring ideas to life. Here are some of my favorites:
         </p>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
-          {% assign technologies = "Ruby,Ruby on Rails,Python,Java,JavaScript,TypeScript,React,Node.js,Docker,AWS,Oracle Cloud,Git,PostgreSQL,Tailwind CSS,VIM,VSCode,Copilot,Claude Sonnet" | split: "," %}
-          {% for tech in technologies %}
-          <div class="bg-slate-700/50 border border-slate-600 rounded-lg p-4 text-center hover:border-indigo-500 hover:bg-slate-600/50 transition-all duration-200 group">
-            <span class="text-sm font-medium text-slate-300 group-hover:text-indigo-400 transition-colors duration-200">{{ tech }}</span>
-          </div>
-          {% endfor %}
-        </div>
+        {% include technologies.html %}
       </div>
     </div>
 
